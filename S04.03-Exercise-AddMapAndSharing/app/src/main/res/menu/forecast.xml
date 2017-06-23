@@ -25,4 +25,8 @@
         android:title="@string/action_refresh"
         app:showAsAction="ifRoom"/>
     <!--TODO (1) Add a menu item to open the map-->
+    <item
+        android:id="@+id/action_share"
+        android:title="Share Weather Details"
+        />
 </menu>

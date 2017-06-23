@@ -20,6 +20,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.ShareCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -222,6 +223,13 @@ public class MainActivity extends AppCompatActivity implements ForecastAdapterOn
         }
 
         // TODO (2) Launch the map when the map menu item is clicked
+        if (id == R.id.action_share) {
+            ShareCompat.IntentBuilder
+                    .from(this)
+                    .setType("text/plain")
+                    .setText(item.toString())
+                    .startChooser();
+        }
 
         return super.onOptionsItemSelected(item);
     }
